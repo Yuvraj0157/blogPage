@@ -1,16 +1,23 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 
-function BlogPost() {
+const BlogPost = () => {
   const { id } = useParams();
+
+  // Dummy data for blog post content
+  const post = {
+    id: id,
+    title: `Post ${id}`,
+    content: `This is the full content of post ${id}.`,
+  };
 
   return (
     <div>
-      <h2>Blog Post {id}</h2>
-      {/* Display the full content of the blog post identified by id */}
+      <h1>{post.title}</h1>
+      <p>{post.content}</p>
       <Link to="/">Go Back</Link>
     </div>
   );
-}
+};
 
 export default BlogPost;

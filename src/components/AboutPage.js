@@ -1,12 +1,12 @@
 import React from 'react';
 
-function AboutPage() {
+const AboutPage = () => {
   return (
     <div>
-      <h2>About Page</h2>
-      {/* Provide information about the blog and its author */}
+      <h1>About Page</h1>
+      <p>Information about the blog and its author.</p>
     </div>
   );
-}
+};
 
 export default AboutPage;

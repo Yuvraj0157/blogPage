@@ -1,37 +1,20 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
 import HomePage from './components/HomePage';
 import BlogPost from './components/BlogPost';
 import AboutPage from './components/AboutPage';
 
-function App() {
+const App = () => {
   return (
     <Router>
-      <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-          </ul>
-        </nav>
-        <Switch>
-          <Route path="/about">
-            <AboutPage />
-          </Route>
-          <Route path="/post/:id">
-            <BlogPost />
-          </Route>
-          <Route path="/">
-            <HomePage />
-          </Route>
-        </Switch>
-      </div>
+      <Switch>
+        <Route path="/about" component={AboutPage} />
+        <Route path="/post/:id" component={BlogPost} />
+        <Route path="/" component={HomePage} />
+      </Switch>
     </Router>
   );
-}
+};
 
 export default App;
